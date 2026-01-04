@@ -281,10 +281,14 @@ button {
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    z-index: 2;
-    /* Content above background */
+    /* Removed z-index: 2 which might stack weirdly */
     background: transparent;
-    /* Ensure transparency */
+    width: 100%;
+    /* Ensure width is explicit */
+    top: 0 !important;
+    /* Force reset */
+    left: 0 !important;
+    /* Force reset */
 }
 
 /* removing old pseudo-element animation */
