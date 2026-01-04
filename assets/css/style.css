@@ -96,8 +96,21 @@ button {
     padding: 2rem 1.5rem;
     border-left: 1px solid var(--glass-border);
     backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    /* Safari Fix */
     background: var(--glass-bg);
     z-index: 10;
+}
+
+/* ... existing code ... */
+
+/* Logic for Glass Panel */
+.glass-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    /* Safari Fix */
 }
 
 /* Brand - Dazzling Effect */
@@ -368,6 +381,8 @@ body.theme-light .orb {
     border-bottom: 1px solid var(--glass-border);
     background: rgba(15, 15, 17, 0.8);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari Fix */
     z-index: 5;
 }
 
@@ -504,11 +519,12 @@ body.theme-light .orb {
         right: 0;
         top: 0;
         bottom: 0;
-        transform: translateX(100%); /* Hide to right */
+        transform: translateX(100%);
+        /* Hide to right */
         transition: transform 0.3s var(--ease-out);
         z-index: 1000;
         width: 280px;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     }
 
     .sidebar.active {
@@ -517,7 +533,8 @@ body.theme-light .orb {
 
     .main-content {
         width: 100%;
-        margin-right: 0; /* Override any potential margin */
+        margin-right: 0;
+        /* Override any potential margin */
     }
 
     .top-bar {
@@ -531,7 +548,7 @@ body.theme-light .orb {
         justify-content: center;
         font-size: 1.5rem;
         color: var(--text-main);
-        background: rgba(255,255,255,0.1);
+        background: rgba(255, 255, 255, 0.1);
         width: 40px;
         height: 40px;
         border-radius: 8px;
@@ -540,30 +557,31 @@ body.theme-light .orb {
     }
 
     /* Stack Grids */
-    .grid-3, .grid-2 {
+    .grid-3,
+    .grid-2 {
         grid-template-columns: 1fr !important;
     }
 
     .card {
         padding: 1rem;
     }
-    
+
     .brand {
         margin-bottom: 2rem;
     }
-    
+
     /* Overlay when sidebar is open */
     .sidebar-overlay {
         position: fixed;
         inset: 0;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(4px);
         z-index: 900;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s;
     }
-    
+
     .sidebar-overlay.active {
         opacity: 1;
         pointer-events: all;
