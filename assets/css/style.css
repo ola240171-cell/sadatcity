@@ -445,7 +445,9 @@ body.theme-light .orb {
     padding: 2rem;
     overflow-y: auto;
     position: relative;
-    z-index: 1;
+    /* Ensure visibility on GitHub Pages / Mobile */
+    display: block !important;
+    min-height: 50vh;
 }
 
 /* Scrollbar */
